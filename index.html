@@ -1,0 +1,154 @@
+<html>
+  <head></head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <a href="#">
+          <header id="nav-title">C++ STL Documentation</header>
+        </a>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Algorithms">Algorithms</a>
+        <a class="nav-link" href="#Containers">Containers</a>
+        <a class="nav-link" href="#Functions">Functions</a>
+        <a class="nav-link" href="#Iterators">Iterators</a>
+      </nav>
+    </header>
+    <main id="main-doc">
+      <section id="Introduction" class="main-section">
+        <header class="main-header">Introduction</header>
+        <p>The Standard Template Library (STL) is a set of C++ template classes to provide common programming data structures and functions such as lists, stacks, arrays, etc. It is a library of container classes, algorithms and iterators. It is a generalized library and so, its components are parameterized. A working knowledge of template classes is a prerequisite  for working with STL.</p>
+        <strong>STL has four components</strong>
+        <ul>
+          <li>Algorithms</li>
+          <li>Containers</li>
+          <li>Functions</li>
+          <li>Iterators</li>
+        </ul>
+        <p>Example:</p>
+        <div class="codebox">
+          <code>
+            std::vector&ltdouble&gt vec = {2.1, 0, -5.4 1.2, -3.3}; <br/>
+            std::sort(vec.begin(), vec.end()); <br/>
+          </code> 
+        </div>
+      </section>
+      
+      <section id="Algorithms" class="main-section">
+        <header class="main-header">Algorithms</header>
+        <p>The header algorithm defines a collection of functions especially designed to be used on ranges of elements.They act on containers and provide means for various operations  for the contents of the containers.</p>
+        <strong>Algorithm</strong>
+        <ul>
+          <li>Sorting</li>
+          <li>Searching</li>
+          <li>Important STL Algorithms</li>
+          <li>Useful Array Algorithms</li>
+          <li>Partition Operations</li>
+        </ul>
+        <strong>Numeric</strong>
+        <ul>
+          <li>Valarray Class</li>
+        </ul>
+        <p>Example:</p>
+        <div class="codebox">
+          <code>
+            int a = 2; <br/>
+            int b = 3; <br/>
+            std::swap(a, b); <br/>
+          </code>
+        </div>
+      </section>
+      
+      <section id="Containers" class="main-section">
+        <header class="main-header">Containers</header>
+        <strong>Sequence Containers</strong>
+        <p>Implement data structures which can be accessed in a sequential manner.</p>
+        <ul>
+          <li>Vector</li>
+          <li>List</li>
+          <li>Deque</li>
+          <li>Array</li>
+          <li>Forward List</li>
+        </ul>
+        <strong>Container Adaptors</strong>
+        <p>Provide a different interface for sequential containers.</p>
+        <ul>
+          <li>Queue</li>
+          <li>Priority Queue</li>
+          <li>Stack</li>
+        </ul>
+        <strong>Associative Containers</strong>
+        <p>Implement sorted data structures that can be quickly searched (O(log n) complexity).</p>
+        <ul>
+          <li>Set</li>
+          <li>Multiset</li>
+          <li>Unordered Set</li>
+          <li>Unordered Multiset</li>
+          <li>Map</li>
+          <li>Multimap</li>
+          <li>Unordered Map</li>
+          <li>Unordered Multimap</li>
+        </ul>
+        <p>Example:</p>
+        <div class="codebox">
+          <code>
+            std::vector &ltint&gt vec; <br/>
+            vec.push_back(2); <br/>
+            vec.push_back(4); <br/>
+            vec.push_back(6); <br/>
+            for (const auto& elem : vec) { <br/>
+            &nbsp std::cout &lt&lt elem &lt&lt std::endl; <br/>
+            } <br/>
+          </code>
+        </div>
+      </section>
+      
+      <section id="Functions" class="main-section">
+        <header class="main-header">Functions</header>
+        <p>The STL includes classes that overload the function call operator. Instances of such classes are called function objects or functors. Functors allow the working of the associated function to be customized with the help of parameters to be passed.</p>
+        <ul><li>Functors</li></ul>
+        <div class="codebox">
+          <code>
+            class increment { <br/>
+            &nbsp private: <br/>
+            &nbsp&nbsp int num; <br/>
+            &nbsp public: <br/>
+            &nbsp&nbsp increment(int n) : num(n) { } <br/>
+            &nbsp&nbsp int operator () (int arr_num) const { <br/>
+            &nbsp&nbsp&nbsp return num + arr_num; <br/>
+            &nbsp&nbsp } <br/>
+            }; <br/>
+            int main() { <br/>
+            &nbsp int arr[] = {1, 2, 3, 4, 5}; <br/>
+            &nbsp int to_add = 5; <br/>
+            &nbsp std::transform(arr, arr + n, arr, increment(to_add)); <br/>
+            &nbsp for (int i = 0; i &lt n; i++) { <br/>
+            &nbsp&nbsp std::cout &lt&lt arr[i] &lt&lt " "; <br/>  
+            &nbsp } <br/>
+            } <br/>
+          </code>
+        </div>
+      </section>
+      
+      <section id="Iterators" class="main-section">
+        <header class="main-header">Iterators</header>
+        <p>As the name suggests, iterators are used for working upon a sequence of values. They are the major feature that allow generality in STL.</p>
+        <ul><li>Iterators</li></ul>
+        <p>Example:</p>
+        <div class="codebox">
+          <code>
+            std::list<int> myList = {1, 2, 3}; <br/>
+            for (std::list&ltint&gt::iterator it = myList.begin(); it != myList.end(); it++) { <br/>
+            &nbsp std::cout &lt&lt *it &lt&lt std::endl; <br/>
+            } <br/>
+          </code>
+        </div>
+      </section>
+    </main>
+    <section id="post-main">
+      <p id="post-text">All the information in this documentation page and one of the code snippets was obtained from <span><a href="https://www.geeksforgeeks.org/the-c-standard-template-library-stl/" target="_blank">Geek for Geeks</a></span>.</p>
+    </section>
+    <footer>
+      <p id="ftr-txt">Developed by Brian Q.<br/>&copy 2019.</p>
+    </footer>
+  </body>
+</html>
